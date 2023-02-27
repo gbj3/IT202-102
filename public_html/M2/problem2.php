@@ -7,7 +7,12 @@ function getTotal($arr) {
     echo "<br>Processing Array:<br><pre>" . var_export($arr, true) . "</pre>";
     $total = 0.00;
     //TODO do adding here
+    for ($i=0; $i<count($arr); $i++) { //gbj3 IT202 2/26/23
+        $total+=$arr[$i]; //adds to total
+    }
     //TODO do rounding stuff here
+    $total = number_format((float)$total, 2, '.', ''); //rounds to two decimals
+
     echo "The total is " . var_export($total, true);
 }
 echo "Problem 2: Adding Floats<br>";
