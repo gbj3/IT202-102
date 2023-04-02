@@ -13,10 +13,13 @@
             setTimeout(() => {
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-                onclick = document.getElementsByTag("H1").innerHTML;
-                updateCurrentPage(onclick);
+                
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
+        }
+        function updatehead(link){
+            document.querySelector('h1').textContent = link;
+            document.title = link;
         }
     </script>
     <style>
@@ -43,10 +46,10 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#login">login</a></li>
-            <li><a href="#register">register</a></li>
-            <li><a href="#profile">profile</a></li>
-            <li><a href="#logout">logout</a></li>
+            <li><a href="#login" onclick="updatehead('login')">login</a></li>
+            <li><a href="#register" onclick="updatehead('register')">register</a></li>
+            <li><a href="#profile" onclick="updatehead('profile')">profile</a></li>
+            <li><a href="#logout" onclick="updatehead('logout')">logout</a></li>
         </ul>
     </nav>
     <h1></h1>
