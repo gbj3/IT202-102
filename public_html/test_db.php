@@ -1,3 +1,6 @@
+<?php
+
+require(__DIR__ . "/../lib/db.php");
 
 $query = "SELECT 'test' from dual";
 $db = getDB();//this is accessible via the db.php require above
