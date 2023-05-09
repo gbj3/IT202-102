@@ -21,6 +21,7 @@ require(__DIR__ . "/user_helpers.php");
 require(__DIR__ . "/duplicate_user_details.php");
 //reset session
 require(__DIR__ . "/reset_session.php");
+
 require(__DIR__ . "/get_url.php");
 require(__DIR__ . "/give_gems.php"); //needs to be here
 require(__DIR__ . "/get_or_create_account.php");
@@ -44,4 +45,3 @@ require(__DIR__ . "/paginate.php");
 require(__DIR__ . "/redirect.php");
 
 require(__DIR__ . "/comp_helpers.php");
-require(__DIR__ . "/get_url.php");
