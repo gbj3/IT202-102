@@ -30,10 +30,19 @@ require(__DIR__ . "/../../partials/nav.php");
             UP: false,
             DOWN: false
         };
-
+        function GameData() {
+        return {
+            score: 0,
+            AddPoints: function(p) {
+                this.score += p;
+                document.getElementById("score").innerText = "Score: " + this.score;
+            }
+        }
+    }
         // Keep track of the score
-        var rightScore = 0;
+
         var leftScore = 0;
+        var rightScore = 0;
         function init() {
             canvas = document.getElementById("board");
             if (canvas.getContext) {
@@ -51,17 +60,6 @@ require(__DIR__ . "/../../partials/nav.php");
                 canvas.focus();
             }
         }
-        function GameData() {
-            return {
-                score: 0,
-                AddPoints: function(p) {
-                    this.score += p;
-                    document.getElementById("score").innerText = "Score: " + this.score;
-                }
-            }
-        }
-        
-
         function resetBall() {
             leftPaddle.h = paddleHeight;
             rightPaddle.h = paddleHeight;
@@ -227,12 +225,12 @@ require(__DIR__ . "/../../partials/nav.php");
                 }
             }
         }
-        function checkScore() {
+        function checkScore() { //gbj3 IT202
             // Score if the ball goes past a paddle
             if (ball.x < leftPaddle.x) {
                 rightScore++;
                 if (rightScore-leftScore >= 6){
-                    leftscore++;
+                    leftScore++;
                 }
                 resetBall();
                 ball.sX *= -1;
@@ -272,13 +270,10 @@ require(__DIR__ . "/../../partials/nav.php");
             for (let i = 0; i < drawables.length; i++) {
                 drawables[i].draw();
             }
-        
-    }
-
+        }
     </script>
 </head>
 <body onload="init();">
-
 <main>
     <canvas id="board" width="600px" height="600px" style="border: 1px solid black;">
 

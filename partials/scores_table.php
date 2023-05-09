@@ -5,7 +5,7 @@ if (!isset($duration)) {
     $duration = "day"; //choosing to default to day
 }
 
-if (in_array($duration, ["day", "week", "month", "lifetime"])) {
+if (in_array($duration, ["day", "week", "month", "lifetime"])) { //gbj3 IT202
     $results = get_top_10($duration);
 } else if ($duration === "latest") {
     if (!isset($user_id)) {
@@ -45,7 +45,7 @@ $ignored = ["id"];
     <div class="card-body">
         <div class="card-title">
             <div class="fw-bold fs-3">
-                <?php se($title); ?>
+                <?php se($title); ?> 
             </div>
         </div>
         <div class="card-text">
